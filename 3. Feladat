@@ -1,0 +1,42 @@
+#Számtsa ki két szám legnmagyobb közös osztóját!
+#előfeltétel : a=>0 és b >0
+#utófeltétel : inko = (a,b)
+
+hiba = True
+while hiba:
+    try:
+        a = int(input("Írjon be egy nem negatív egész számot"))
+        hiba = a<0
+    except:
+        print("Nem egész számot adtál meg! Próbálkozzon újra!")
+    else:
+        if hiba:
+            print("Negatív számot adtál meg")
+hiba=True
+while hiba:
+    try:
+        b = int(input("Írjon be egy nem negatív egész számot"))
+        hiba = b<0
+    except:
+        print("Nem egész számot adtál meg! Próbálkozzon újra!")
+    else:
+        if hiba:
+            print("Negatív számot adtál meg")
+hiba = True
+while hiba:
+    if a>b:
+        while hiba:
+            r = (a%b)
+            a = b
+            b = r
+            hiba = r >0
+        print("Tehát a két szám legnagyobb közös osztója a", a)
+    else:
+        while hiba:
+            r = (b%a)
+            b = a
+            a = r
+            hiba = r >0
+        print("Tehát a két szám legnagyobb közös osztója a", b)
+            
+
