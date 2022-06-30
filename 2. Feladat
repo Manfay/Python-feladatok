@@ -1,4 +1,4 @@
-Feladat: Binomiális eloszlás rekurzív módon.
+Feladat: Binomiális eloszlás rekurzív módon. (Pascal háromszög)
 
 def Binomalis_rekurzivan(N):
     B=[]
