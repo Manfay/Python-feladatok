@@ -1,0 +1,39 @@
+Feladat: Adjunk meg a vizsgált napok számát, majd egy listába minden napnak megadjuk az adott napnak a hőmérsékletének a mértékét. 
+(Legyen benne hiba keresés pl. Ha nem számot adunk meg ne fogadja el) Majd pedig a lista elemei közül válasszuk ki a legalacsonyabb hőmérsékletet.
+
+MINH = -89
+MAXH = 57
+#Vizsgált napok számának megadása.
+hiba=True
+while hiba:
+    try :
+        napdb = int(input("Add meg hány darab napot vizsgáljunk meg"))
+        hiba= napdb<=0
+    except:
+        print("Nem egész számot adtál meg")
+    else:
+        if hiba:
+            print("Nem pozitív számot adtál meg!")
+#Lista beolvasása
+hőm = []
+for i in range(napdb):
+    hiba= True
+    while hiba:
+        try:
+            print("Írd be a(z)" ,i+1,"nap hömérsékletét,",MINH,"ÉS",MAXH,"között! ")
+            elem=float(input())
+            hiba = elem <MINH or elem> MAXH
+        except:
+            print("Nem számot adtál meg")
+        else:
+            if hiba:
+                print("Túl alacsony vagy túl magas hömérsékletet adtál meg!")
+            else:
+                hőm.append(elem)
+#feladat
+minhőm= hőm[0]
+for i in range(1,napdb):
+    if hőm[i] < minhőm:
+        minhőm= hőm[i]
+#kiírás
+print("A legalacsonyabb hőmérséklet:",minhőm)
