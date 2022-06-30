@@ -1,0 +1,42 @@
+
+#ki kell találni egy 1 és 100 közötti egész számot!
+#előfeltétel :legyen a szám 1 és 100 között
+
+import random
+gondolt = random .randint(1,101)
+print(gondolt)
+b=0
+c = 100
+tömb=[]
+for i in range(c):
+    d =i
+    hiba = True
+    while hiba:
+        try:
+            a = int(input("Adj meg egy számot 1  és 100 között"))
+            hiba = 0>a or a>100
+        except:
+            print("nem egész számot adtál meg")
+        else:
+            if hiba:
+                print("a szám amit megadtál nem 1 és 100 között van")
+    for i in range(1):
+        if a < gondolt:
+            print("A gondolt szám nagyobb")
+            tömb.append(a)
+        else:
+            if a > gondolt:
+                print("a gondolt szám kisebb")
+                tömb.append(a)
+            else:
+                print("helyes a megoldás")
+                tömb.append(a)
+                b = 2
+    if b==2:
+        break
+    for i in range(d):
+        if a == tömb[i]:
+            print("ezt az elemet már választottad")
+            c = c+1
+            
+        
