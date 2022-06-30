@@ -38,5 +38,26 @@ for i in range(c):
         if a == tömb[i]:
             print("ezt az elemet már választottad")
             c = c+1
-            
-        
+           
+# Második féle megoldás
+a = 0
+import random
+gondolt = random .randint(1,101)
+while a != gondolt:    
+    hiba = True
+    while hiba:
+        try:
+            a = int(input("Adj meg egy számot 1  és 100 között"))
+            hiba = 0>=a or a>100
+        except:
+            print("nem egész számot adtál meg")
+        else:
+            if hiba:
+                print("a szám amit megadtál nem 1 és 100 között van")
+    if a < gondolt:
+        print("A gondolt szám nagyobb")
+    else:
+        if a > gondolt:
+            print("a gondolt szám kisebb")
+        else:
+            print("helyes a megoldás")
