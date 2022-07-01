@@ -27,10 +27,10 @@ def Beolvasas():
     seged = input().split()
     N=int(seged[0])
     M=int(seged[1])
-    seged2 = input().split()
-    Min1=int(seged2[0])
-    Min2=int(seged2[0])
-    Min3=int(seged2[0])
+    Min =[]
+    seged2= input().split()
+    for i in range (len(seged2)):
+        Min.append(int(seged2[i]))
     Ind = []
     S = []
     P = []
@@ -41,16 +41,17 @@ def Beolvasas():
             S.append(int(seged3[j+1]))
             P.append(int(seged3[j+2]))
         seged3.clear()
-    return N,M,Min1,Min2,Min3,Ind,S,P
+    return N,M,Min,Ind,S,P
 
 
-N,M,Min1,Min2,Min3,Ind,S,P=Beolvasas()
+N,M,Min,Ind,S,P=Beolvasas()
 
 for i in range(M):
     lista1 = []
     lista1.append(Ind[i])
     for j in range(Ind[i]):
-        b = 0
+        a=0
+        b = Min[a]
         for o in range(Ind[i]):
             if P[o] > b:
                 b = P[o]
@@ -59,7 +60,6 @@ for i in range(M):
                 lista1.append(S[k])
                 P[k] = 1
                 break
+        a+=1
     print(lista1)
     for j in range(Ind[i]):
-        S.pop(0)
-        P.pop(0)
